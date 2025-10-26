@@ -7,7 +7,7 @@ Chào mừng bạn đến với dự án Game Cờ Caro (Tic-Tac-Toe) được x
 🎮 Chơi Ngay Tại Đây!
 Bạn có thể trải nghiệm game ngay lập tức qua đường link sau:
 
-Link Chơi Game Trực Tuyến: https://huyytraan.github.io/Tic-Tac-Toe-game/ 
+Link Chơi Game Trực Tuyến: https://tuyetvo-lop95.github.io/SanPhamKhoaHocKiThuatLop95/ 
 
 
 
@@ -39,8 +39,8 @@ Cách đơn giản nhất là truy cập vào link chơi game trực tuyến ở
 
 Cách 2: Chơi trên máy tính cá nhân.
 Clone kho chứa này về máy của bạn:
-https://github.com/HuyyTraan/Tic-Tac-Toe-game
-git clone : https://github.com/HuyyTraan/Tic-Tac-Toe-game
+https://TuyetVo-Lop95/SanPhamKhoaHocKiThuatLop95
+git clone : https://github.com/TuyetVo-Lop95/SanPhamKhoaHocKiThuatLop95
 
 Di chuyển vào thư mục dự án:
 
