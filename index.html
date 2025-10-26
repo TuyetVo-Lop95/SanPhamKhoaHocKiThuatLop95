@@ -83,6 +83,7 @@
         <h1 class="text-3xl font-bold mb-6 text-gray-800">Chọn Chế Độ Chơi</h1>
         <button id="vs-ai-btn" class="w-full mb-4 px-6 py-3 bg-blue-500 text-white font-bold rounded-lg shadow-md hover:bg-blue-600 transition-transform transform hover:scale-105">Chơi với Máy</button>
         <button id="vs-player-btn" class="w-full px-6 py-3 bg-green-500 text-white font-bold rounded-lg shadow-md hover:bg-green-600 transition-transform transform hover:scale-105">2 Người Chơi</button>
+        <button id="how-to-play-btn" class="w-full mt-4 px-6 py-3 bg-gray-500 text-white font-bold rounded-lg shadow-md hover:bg-gray-600 transition-transform transform hover:scale-105">Hướng Dẫn Chơi</button>
     </div>
 
     <!-- Player Name Entry --><div id="name-entry" class="hidden bg-white p-8 rounded-xl shadow-lg text-center w-11/12 max-w-md">
@@ -96,6 +97,19 @@
             <input type="text" id="player2-name" class="w-full p-2 border rounded shadow-sm focus:ring-2 focus:ring-red-400" value="Người chơi 2">
         </div>
         <button id="start-pvp-btn" class="w-full px-6 py-3 bg-blue-500 text-white font-bold rounded-lg shadow-md hover:bg-blue-600">Bắt đầu</button>
+    </div>
+
+    <!-- How to Play Screen -->
+    <div id="rules-screen" class="hidden bg-white p-8 rounded-xl shadow-lg w-11/12 max-w-md text-left">
+        <h2 class="text-2xl font-bold mb-4 text-gray-800 text-center">Hướng Dẫn Chơi</h2>
+        <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li><strong>Mục tiêu:</strong> Giành chiến thắng bằng cách có được 3 ký hiệu (X hoặc O) liên tiếp trên một hàng ngang, hàng dọc, hoặc đường chéo.</li>
+            <li><strong>Lượt chơi:</strong> Người chơi X luôn đi trước. Trong chế độ 2 người, người chơi tự đổi lượt. Khi chơi với máy, máy (O) sẽ đi sau bạn.</li>
+            <li><strong>Thời gian:</strong> Mỗi người chơi có 30 giây cho mỗi nước đi. Hết giờ sẽ bị xử thua.</li>
+            <li><strong>Thắng/Thua:</strong> Khi bạn thắng, bạn sẽ thấy hiệu ứng pháo hoa. Nếu bạn thua máy, bạn sẽ thấy thông báo trêu ghẹo.</li>
+            <li><strong>Hòa:</strong> Nếu tất cả 9 ô đã được lấp đầy mà không có ai thắng, ván đấu sẽ kết thúc với tỉ số hòa.</li>
+        </ul>
+        <button id="back-from-rules-btn" class="w-full mt-6 px-6 py-3 bg-blue-500 text-white font-bold rounded-lg shadow-md hover:bg-blue-600">Quay lại</button>
     </div>
 
     <!-- Main Game Container --><main id="game-container" class="hidden bg-white p-6 md:p-8 rounded-xl shadow-lg text-center relative w-11/12 max-w-lg">
@@ -139,6 +153,9 @@
         const playerXNameDisplay = document.getElementById('playerXName');
         const playerONameDisplay = document.getElementById('playerOName');
         const confettiContainer = document.getElementById('confetti-container');
+        const howToPlayBtn = document.getElementById('how-to-play-btn');
+        const rulesScreen = document.getElementById('rules-screen');
+        const backFromRulesBtn = document.getElementById('back-from-rules-btn');
 
         // Game State
         let gameMode = null; // 'ai' or 'pvp'
@@ -161,6 +178,7 @@
             gameMenu.classList.add('hidden');
             nameEntry.classList.add('hidden');
             gameContainer.classList.add('hidden');
+            rulesScreen.classList.add('hidden'); // Thêm màn hình hướng dẫn vào đây
             screen.classList.remove('hidden');
         }
 
@@ -189,6 +207,9 @@
             showScreen(gameMenu);
             clearInterval(timerInterval);
         });
+
+        howToPlayBtn.addEventListener('click', () => showScreen(rulesScreen));
+        backFromRulesBtn.addEventListener('click', () => showScreen(gameMenu));
         
         function initializeGame() {
             updateNamesDisplay();
@@ -407,4 +428,5 @@
     </script>
 </body>
 </html>
+
 
